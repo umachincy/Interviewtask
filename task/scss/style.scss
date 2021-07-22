@@ -1,0 +1,344 @@
+
+:root{
+    --clr-text: #3d3d3d;
+    --ff-roboto: "Roboto", sans-serif;
+}
+
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+// html { font-size: calc(.85em + 5vw) }
+
+html{
+    font-family: var(--ff-roboto);
+    color: var(--clr-text);
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body{
+    margin: 0;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+section{
+    padding: 2.5em 1em;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+p{
+    margin: 0;
+}
+h2{
+    font-weight: 500;
+}
+h2,
+h3{
+    line-height: .9;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: clamp(3.5rem, 5vw, 5rem);
+}
+h3{
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+}
+
+p{
+    margin-bottom: .85em;
+    
+}
+p:last-child{
+    margin-bottom: 0 ;
+}
+
+p,a{
+    font-size: clamp(.875rem, 1vw, 1rem);
+    line-height: 1.4;
+}
+.section-title {
+    font-weight: 500;
+    font-size: 2rem;
+}
+.section-title-small{
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    small{
+        font-size: .7em;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+    color: #555;
+    &:hover { 
+        text-decoration: underline;
+    }
+}
+
+/* Page Style */
+
+.by-name {
+    display: block;
+    margin: 1em 0;
+    color: #999;    
+}
+
+.hero{
+    background-color: #555;
+    background-image: url(../images/banner.jpg);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 30vh 1em;
+    color: #fff;
+    text-align: center;
+    background-position: center;
+    h2{
+        font-size: 3.5rem;
+    }
+}
+
+.our-events {
+    margin-left: 0em;
+    .section-list {
+        display: flex;
+        padding: 1em 1em 2em 0;
+        margin-top: 1.5em;
+        border-bottom: 2px solid #ccc;
+        flex-wrap: wrap;
+        & > div {
+            flex: 0 0 50%;
+            padding: .5em 1em 1em 1.25em;
+            border-right: 2px solid #ccc;
+            margin-bottom: 2em;
+            &:nth-child(even){
+                border-right: 0;
+            }
+            & > a {
+                color: #555;
+                font-size: .875rem;                
+            }
+           
+            &:first-child {
+                padding-left: 0;
+            }
+            & > *{
+                display: block;
+                
+            }
+        }
+    }
+}
+
+.color-blocks {
+    display: flex;
+    flex-direction: column;
+    h4{
+        font-weight: 400;
+        font-size: 2rem;
+        margin: .5em 0;
+    }
+    & > div {
+        flex:  0 0 50%;
+        padding: 0;
+        
+        .bg-color {
+            background: url(../images/banner2.jpg) no-repeat center;
+            background-size: cover;
+            position: relative;
+            .date{
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: rgba(51,51, 51, .9);
+                color: #fff;
+                text-align: center;
+                padding: 0 .25em;
+                span { 
+                    display: block;
+                    padding: .25em .5em;
+                    font-size: .875rem;
+                    &:first-child {
+                        border-bottom: 1px solid #aaa;
+                    }
+                }
+            }
+            .type { 
+                position: absolute;
+                bottom: 0;
+                background: #000;
+                color: #bbb;
+                text-align: center;
+                display: block;
+                padding: .25em .5em;
+                font-size: .875rem;
+            }
+        }
+        &.left-sec {
+            border-right: 0;
+            .bg-color {
+                height: 400px;
+            }
+        }
+        &.right-sec {
+            display: flex;
+            flex-wrap: wrap;
+            & > div {
+                flex: 1 0 50%;
+                padding: 0 .5em;
+                margin-bottom: 1em;
+                &:first-child {
+                    border-right: 0;
+                }
+                b { 
+                    font-weight: 500;
+                    margin-top: .5em;
+                    display: block;
+                }
+            }
+            .bg-color {
+                height: 220px;
+            }
+        }
+        
+    }
+}
+
+.graphic-design{
+    background-color: #000;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 3em;
+    padding: 6em 1em 3em;
+    position: relative;
+    .content {
+        position: absolute;
+        color: #fff;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 6em;
+        width: 80%;
+        text-align: center;
+        small {
+            display: block;
+            text-align: center;
+            margin-top: 2em;
+        }
+        h3 {
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 36px;
+        }
+    }
+   & > div:not(.content) {
+       display: flex;
+       height: 150px;
+       width: 100%;
+        margin: 0 auto;
+        justify-content: space-around;
+        
+       span {
+           display: inline-block;
+            flex: 0 0 33%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #555;
+            background-blend-mode: multiply;
+       }
+   }
+}
+.past-exhibitions{
+    margin-left: 0em;
+    padding-bottom: 3em;
+    ul{
+        list-style: none;
+        width: 100%;
+        padding-left: 0;
+        margin: 0 auto;
+        margin-top: 2.5em;
+        li {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #ccc;
+            & > * {
+                align-self: center;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px){
+    .our-events {
+        margin-left: 3em;
+        .section-list > div {
+            flex: 0 0 16.666%;
+            border-right: 2px solid #ccc;
+             &:last-child {
+                border: 0;
+            }
+        }
+    }
+    .color-blocks {
+        flex-direction: row;
+        & > div {
+            padding: 0 2em;
+            &.left-sec {
+                border-right: 1px solid #ccc;
+            }
+            &.right-sec > div {
+                padding: 0 1.5em;
+                &:first-child {
+                    border-right: 1px solid #ccc;
+                }
+            }
+        }
+    }
+    .graphic-design {
+        padding: 6em 2em 3em;
+        .content {
+            width: 80%;
+        }
+        & > div:not(.content){
+            width: 65%;
+        }
+    }
+    .past-exhibitions {
+        margin-left: 6.5em;
+        width: 80%;
+    }
+    section{
+        padding: 4.5em 1em 0em;
+    }
+
+
+}
+
+@media only screen and (min-width: 1200px){
+    .our-events {
+        margin-left: 6em;
+    }
+    .hero{
+        padding: 30vh 1rem;
+    }
+}
+@media only screen and (min-width: 1440px){
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
